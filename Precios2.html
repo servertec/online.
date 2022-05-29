@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ServerTec-Precios</title>
+<link rel="icon" type?"image/png" href="logo.png">
+<style type="text/css">
+body,td,th {
+	color: #FFF;
+}
+body {
+	background-color: #000;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.encabezado {text-align: center;
+	position: fixed;
+	background-color: #000;
+	color: #FFF;
+}
+</style>
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.bienvenidos {text-align: center;
+	font-family: "Comic Sans MS", cursive;
+	font-size: 36px;
+}
+.Subtitulos {	font-size: 24px;
+}
+.d {font-size: 16px;
+	text-align: center;
+	color: #FFF;
+}
+</style>
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+</head>
+
+<body>
+<table width="104%" border="0" align="center" cellspacing="0">
+  <tr class="encabezado">
+    <td width="21%" align="left" bgcolor="#000000"><img src="logo.png" alt="logo" width="45" height="43" /></td>
+    <td width="69%" align="center" bgcolor="#000000"><ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicios2.html">SERVICIOS</a></li>
+      <li><a href="Precios2.html">PRECIOS</a></li>
+    </ul></td>
+    <td width="5%" align="center" bgcolor="#000000"><ul id="MenuBar2" class="MenuBarHorizontal">
+      <li><a href="login.html">INGRESAR</a></li>
+    </ul></td>
+</tr>
+  <tr class="encabezado"> </tr>
+  <tr class="encabezado"> </tr>
+</table>
+<p>&nbsp; </p>
+<table width="100%" border="0" cellspacing="0">
+  <tr>
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="110" colspan="3" align="center" valign="middle" class="bienvenidos"><p>Puedes obtener el paquete que desees siguiendo las instrucciones</p></td>
+  </tr>
+</table>
+<table width="100%" border="0" align="center" cellspacing="0">
+  <tr>
+    <td height="161" colspan="2" align="center" valign="middle"><p><img src="personas.png" width="160" height="159" alt="p" /></p></td>
+    <td width="33%" align="center" valign="middle"><img src="estudiante.png" width="160" height="120" alt="estudiante" /></td>
+    <td width="33%" align="center" valign="middle"><img src="ec.png" width="160" height="159" alt="ec" /></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" border="0" align="center" cellspacing="30">
+  <tr>
+    <td width="33%" align="center" valign="middle" class="Subtitulos">Público en general</td>
+    <td width="33%" align="center" valign="middle" class="Subtitulos">Empresas</td>
+    <td width="33%" align="center" valign="middle"><p class="Subtitulos">Tiendas pequeñas</p></td>
+  </tr>
+  <tr>
+    <td width="33%" height="189" align="center" valign="middle"><p align="center">Reunión  mediante la plataforma zoom por 40 minutos para resolver cualquier duda en el  lapso de tiempo de la reunión, más nuestros contactos y redes sociales.<br />
+      <br />
+      Valor mensual $3.00</p></td>
+    <td width="33%" align="center" valign="middle"><p align="center">Acciones  anteriores, más el control de la pantalla mediante el programa VNC, para  averiguar los fallos del software.<br />
+      <br />
+    Valor mensual $5.00</p></td>
+    <td width="33%" align="center" valign="middle"><p align="center">Acciones  anteriores, horario 24/7.</p>
+      <p>Valor mensual $4.50</p></td>
+  </tr>
+</table>
+<table width="100%" height="303" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td align="center" valign="middle">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><div class="Subtitulos" id="smart-button-container">
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1.25rem;">
+          <p>Ingrese la opción que usted vea conveniente, recuerde que puede contactarnosla primera vez es gratuita</p>
+          <select name="item-options" id="item-options">
+            <option value="Público en General" price="3">Público en General - 3 USD</option>
+            <option value="Empresas" price="5">Empresas - 5 USD</option>
+            <option value="Tiendas pequeñas" price="4.50">Tiendas pequeñas - 4.50 USD</option>
+          </select>
+          <select name="quantitySelect" id="quantitySelect" style="visibility: hidden">
+          </select>
+        </div>
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+      <script src="https://www.paypal.com/sdk/js?client-id=sb&amp;enable-funding=venmo&amp;currency=USD" data-sdk-integration-source="button-factory"></script>
+      <script>
+      function initPayPalButton() {
+        var shipping = 0;
+        var itemOptions = document.querySelector("#smart-button-container #item-options");
+    var quantity = parseInt();
+    var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+    if (!isNaN(quantity)) {
+      quantitySelect.style.visibility = "visible";
+    }
+    var orderDescription = 'Ingrese la opción que usted vea conveniente, recuerde que la primera vez es gratuita';
+    if(orderDescription === '') {
+      orderDescription = 'Item';
+    }
+    paypal.Buttons({
+      style: {
+        shape: 'pill',
+        color: 'white',
+        layout: 'vertical',
+        label: 'paypal',
+        
+      },
+      createOrder: function(data, actions) {
+        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+        var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+        if(quantitySelect.options.length > 0) {
+          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+        } else {
+          quantity = 1;
+        }
+
+        tax *= quantity;
+        tax = Math.round(tax * 100) / 100;
+        var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+        priceTotal = Math.round(priceTotal * 100) / 100;
+        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+        return actions.order.create({
+          purchase_units: [{
+            description: orderDescription,
+            amount: {
+              currency_code: 'USD',
+              value: priceTotal,
+              breakdown: {
+                item_total: {
+                  currency_code: 'USD',
+                  value: itemTotalValue,
+                },
+                shipping: {
+                  currency_code: 'USD',
+                  value: shipping,
+                },
+                tax_total: {
+                  currency_code: 'USD',
+                  value: tax,
+                }
+              }
+            },
+            items: [{
+              name: selectedItemDescription,
+              unit_amount: {
+                currency_code: 'USD',
+                value: selectedItemPrice,
+              },
+              quantity: quantity
+            }]
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(orderData) {
+          
+          // Full available details
+          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+          // Show a success message within this page, e.g.
+          const element = document.getElementById('paypal-button-container');
+          element.innerHTML = '';
+          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+          // Or go to another URL:  actions.redirect('thank_you.html');
+
+        });
+      },
+      onError: function(err) {
+        console.log(err);
+      },
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
+      </script>
+      &nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" height="152" border="0" align="center" cellspacing="0" id="tablapie">
+  <tbody>
+    <tr class="piedepagina">
+      <td height="152" colspan="2" bgcolor="#000000"><p class="d"><img src="logo.png" width="150" height="150" alt="wa" /></p></td>
+      <td width="753" height="152" align="center" valign="bottom" bgcolor="#000000"><p class="d">Autores:     Angel Pastaz, Melany Guaytarilla, Juan Mejía, Damaris Tulcanaza</p>
+        <p class="d">ServerTec</p>
+        <p class="d">Unidad Educativa Municipal Técnica y en Ciencias &quot;San Francisco de Quito&quot;</p>
+        <p class="d">&nbsp;</p></td>
+    </tr>
+  </tbody>
+</table>
+<script type="text/javascript">
+var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+  </script>
+</body>
+</html>
